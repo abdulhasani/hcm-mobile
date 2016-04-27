@@ -623,12 +623,12 @@ public abstract class StateMachineBase extends UIBuilder {
         }
         if(rootContainerName == null) return;
         if(rootContainerName.equals("Main")) {
-            if("txtPassword".equals(c.getName())) {
-                onMain_TxtPasswordAction(c, event);
-                return;
-            }
             if("txtUsername".equals(c.getName())) {
                 onMain_TxtUsernameAction(c, event);
+                return;
+            }
+            if("txtPassword".equals(c.getName())) {
+                onMain_TxtPasswordAction(c, event);
                 return;
             }
             if("btnLogin".equals(c.getName())) {
@@ -642,10 +642,10 @@ public abstract class StateMachineBase extends UIBuilder {
         }
     }
 
-      protected void onMain_TxtPasswordAction(Component c, ActionEvent event) {
+      protected void onMain_TxtUsernameAction(Component c, ActionEvent event) {
       }
 
-      protected void onMain_TxtUsernameAction(Component c, ActionEvent event) {
+      protected void onMain_TxtPasswordAction(Component c, ActionEvent event) {
       }
 
       protected void onMain_BtnLoginAction(Component c, ActionEvent event) {
