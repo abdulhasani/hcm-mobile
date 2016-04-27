@@ -7,16 +7,11 @@
 
 package userclasses;
 
-import com.basajans.myapp.MenuPrimer;
+import com.basajans.rest.resource.SessionResource;
 import generated.StateMachineBase;
 import com.codename1.ui.*; 
 import com.codename1.ui.events.*;
-import com.codename1.ui.tree.Tree;
-import com.codename1.ui.tree.TreeModel;
 import com.codename1.ui.util.Resources;
-import java.util.ArrayList;
-import java.util.Vector;
-import java.util.List;
 
 /**
  *
@@ -30,8 +25,7 @@ public class StateMachine extends StateMachineBase {
 //    private Form formChildSubordinates;
     public StateMachine(String resFile) {
         super(resFile);
-      
-                
+        findLblMessageLogin().setVisible(false);
         // do not modify, write code in initVars and initialize class members there,
         // the constructor might be invoked too late due to race conditions that might occur
         
@@ -49,8 +43,19 @@ public class StateMachine extends StateMachineBase {
     }
 
 
+    
+    private final SessionResource sessionResource=new SessionResource();
+    private final ValidasiSession validasiSession=new ValidasiSession();
+    
     @Override
     protected void onMain_BtnLoginAction(Component c, ActionEvent event) {
-        
+        String username=findTxtUsername().getText();
+        String password=findTxtPassword().getText();
+        if(validasiSession.cekfield(username, password)){
+            sessionResource.submitLogin(username, password);
+        }else{
+            findLblMessageLogin().setText("* please input username and password");
+            findLblMessageLogin().setVisible(true);
+        }
     }
 }

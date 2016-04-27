@@ -37,6 +37,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("EmbeddedContainer", com.codename1.ui.util.EmbeddedContainer.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
+        UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("TextField", com.codename1.ui.TextField.class);
         if(loadTheme) {
             if(res == null) {
@@ -76,6 +77,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("EmbeddedContainer", com.codename1.ui.util.EmbeddedContainer.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
+        UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("TextField", com.codename1.ui.TextField.class);
         if(loadTheme) {
             if(res == null) {
@@ -174,26 +176,26 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer1(Component root) {
-        return (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer1", root);
+    public com.codename1.ui.Label findLblMessageLogin(Component root) {
+        return (com.codename1.ui.Label)findByName("lblMessageLogin", root);
     }
 
-    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer1() {
-        com.codename1.ui.util.EmbeddedContainer cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer1", Display.getInstance().getCurrent());
+    public com.codename1.ui.Label findLblMessageLogin() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer1", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer2(Component root) {
-        return (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer2", root);
+    public com.codename1.ui.Button findBtnExit(Component root) {
+        return (com.codename1.ui.Button)findByName("btnExit", root);
     }
 
-    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer2() {
-        com.codename1.ui.util.EmbeddedContainer cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer2", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findBtnExit() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("btnExit", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer2", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("btnExit", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -207,7 +209,6 @@ public abstract class StateMachineBase extends UIBuilder {
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.TextField)findByName("txtPassword", aboutToShowThisContainer);
         }
-        
         return cmp;
     }
 
@@ -622,28 +623,35 @@ public abstract class StateMachineBase extends UIBuilder {
         }
         if(rootContainerName == null) return;
         if(rootContainerName.equals("Main")) {
-            if("txtUsername".equals(c.getName())) {
-                onMain_TxtUsernameAction(c, event);
-                return;
-            }
             if("txtPassword".equals(c.getName())) {
                 onMain_TxtPasswordAction(c, event);
+                return;
+            }
+            if("txtUsername".equals(c.getName())) {
+                onMain_TxtUsernameAction(c, event);
                 return;
             }
             if("btnLogin".equals(c.getName())) {
                 onMain_BtnLoginAction(c, event);
                 return;
             }
+            if("btnExit".equals(c.getName())) {
+                onMain_BtnExitAction(c, event);
+                return;
+            }
         }
     }
-
-      protected void onMain_TxtUsernameAction(Component c, ActionEvent event) {
-      }
 
       protected void onMain_TxtPasswordAction(Component c, ActionEvent event) {
       }
 
+      protected void onMain_TxtUsernameAction(Component c, ActionEvent event) {
+      }
+
       protected void onMain_BtnLoginAction(Component c, ActionEvent event) {
+      }
+
+      protected void onMain_BtnExitAction(Component c, ActionEvent event) {
       }
 
 }
