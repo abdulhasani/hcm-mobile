@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="mainHome" cloudDestinationProperty="Home" title="Home" >
+<command name="My Subordinate" id="3" action="mainSubordinates" backCommand="false" /><command name="My Documents" id="2" action="mainDocuments" backCommand="false" /><command name="Home" id="1" action="" backCommand="false" /></component>

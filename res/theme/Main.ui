@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="Main" cloudDestinationProperty="Login" flatten="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Login" >
+  <component type="Container" name="lapisKe2" cloudDestinationProperty="lapisKe2" rtl="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
+    <layoutConstraint value="Center" />
+    <component type="Container" name="lapisKe3" cloudDestinationProperty="lapisKe3" snapToGrid="false" layout="GridLayout" gridLayoutRows="10" gridLayoutColumns="1" >
+      <layoutConstraint value="North" />
+      <component type="EmbeddedContainer" name="EmbeddedContainer2" cloudDestinationProperty="EmbeddedContainer2" >
+      </component>
+      <component type="EmbeddedContainer" name="EmbeddedContainer1" cloudDestinationProperty="EmbeddedContainer1" >
+      </component>
+      <component type="EmbeddedContainer" name="EmbeddedContainer" cloudDestinationProperty="EmbeddedContainer" >
+      </component>
+      <component type="TextField" name="txtUsername" cloudBoundProperty="text" cloudDestinationProperty="txtUsername" text="" hint="Username" >
+      </component>
+      <component type="TextField" name="txtPassword" cloudBoundProperty="text" cloudDestinationProperty="txtPassword" focusable="false" tactileTouch="false" text="" growByContent="false" constraint="65536" maxSize="10" hint="Password" >
+      </component>
+      <component type="Button" name="btnLogin" cloudDestinationProperty="btnLogin" text="Login" >
+      </component>
+      <component type="Button" name="btnLogin" cloudDestinationProperty="btnLogin" text="Exit" >
+      </component>
+    </component>
+  </component>
+</component>
