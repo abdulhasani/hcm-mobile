@@ -116,42 +116,6 @@ public abstract class StateMachineBase extends UIBuilder {
         this(res, null, loadTheme);
     }
 
-    public com.codename1.ui.TextField findTxtUsername(Component root) {
-        return (com.codename1.ui.TextField)findByName("txtUsername", root);
-    }
-
-    public com.codename1.ui.TextField findTxtUsername() {
-        com.codename1.ui.TextField cmp = (com.codename1.ui.TextField)findByName("txtUsername", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextField)findByName("txtUsername", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer(Component root) {
-        return (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer", root);
-    }
-
-    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer() {
-        com.codename1.ui.util.EmbeddedContainer cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.Button findBtnLogin(Component root) {
-        return (com.codename1.ui.Button)findByName("btnLogin", root);
-    }
-
-    public com.codename1.ui.Button findBtnLogin() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("btnLogin", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("btnLogin", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.Container findLapisKe3(Component root) {
         return (com.codename1.ui.Container)findByName("lapisKe3", root);
     }
@@ -176,14 +140,134 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Label findLblMessageLogin(Component root) {
-        return (com.codename1.ui.Label)findByName("lblMessageLogin", root);
+    public com.codename1.ui.Container findContainer1(Component root) {
+        return (com.codename1.ui.Container)findByName("Container1", root);
     }
 
-    public com.codename1.ui.Label findLblMessageLogin() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", Display.getInstance().getCurrent());
+    public com.codename1.ui.Container findContainer1() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container1", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Container)findByName("Container1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLblAge(Component root) {
+        return (com.codename1.ui.Label)findByName("lblAge", root);
+    }
+
+    public com.codename1.ui.Label findLblAge() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblAge", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("lblAge", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer2(Component root) {
+        return (com.codename1.ui.Container)findByName("Container2", root);
+    }
+
+    public com.codename1.ui.Container findContainer2() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container2", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container2", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findEmpNum(Component root) {
+        return (com.codename1.ui.Label)findByName("EmpNum", root);
+    }
+
+    public com.codename1.ui.Label findEmpNum() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("EmpNum", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("EmpNum", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findUnit(Component root) {
+        return (com.codename1.ui.Label)findByName("Unit", root);
+    }
+
+    public com.codename1.ui.Label findUnit() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Unit", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Unit", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findName(Component root) {
+        return (com.codename1.ui.Label)findByName("Name", root);
+    }
+
+    public com.codename1.ui.Label findName() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Name", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Name", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLblEmpNum(Component root) {
+        return (com.codename1.ui.Label)findByName("lblEmpNum", root);
+    }
+
+    public com.codename1.ui.Label findLblEmpNum() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblEmpNum", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("lblEmpNum", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer(Component root) {
+        return (com.codename1.ui.Container)findByName("Container", root);
+    }
+
+    public com.codename1.ui.Container findContainer() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLblName(Component root) {
+        return (com.codename1.ui.Label)findByName("lblName", root);
+    }
+
+    public com.codename1.ui.Label findLblName() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblName", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("lblName", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLblPosition(Component root) {
+        return (com.codename1.ui.Label)findByName("lblPosition", root);
+    }
+
+    public com.codename1.ui.Label findLblPosition() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblPosition", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("lblPosition", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findAge(Component root) {
+        return (com.codename1.ui.Label)findByName("Age", root);
+    }
+
+    public com.codename1.ui.Label findAge() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Age", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Age", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -208,6 +292,78 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.TextField cmp = (com.codename1.ui.TextField)findByName("txtPassword", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.TextField)findByName("txtPassword", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer(Component root) {
+        return (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer", root);
+    }
+
+    public com.codename1.ui.util.EmbeddedContainer findEmbeddedContainer() {
+        com.codename1.ui.util.EmbeddedContainer cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.util.EmbeddedContainer)findByName("EmbeddedContainer", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findPosition(Component root) {
+        return (com.codename1.ui.Label)findByName("Position", root);
+    }
+
+    public com.codename1.ui.Label findPosition() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Position", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("Position", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLblUnit(Component root) {
+        return (com.codename1.ui.Label)findByName("lblUnit", root);
+    }
+
+    public com.codename1.ui.Label findLblUnit() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblUnit", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("lblUnit", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findLblMessageLogin(Component root) {
+        return (com.codename1.ui.Label)findByName("lblMessageLogin", root);
+    }
+
+    public com.codename1.ui.Label findLblMessageLogin() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.TextField findTxtUsername(Component root) {
+        return (com.codename1.ui.TextField)findByName("txtUsername", root);
+    }
+
+    public com.codename1.ui.TextField findTxtUsername() {
+        com.codename1.ui.TextField cmp = (com.codename1.ui.TextField)findByName("txtUsername", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.TextField)findByName("txtUsername", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findBtnLogin(Component root) {
+        return (com.codename1.ui.Button)findByName("btnLogin", root);
+    }
+
+    public com.codename1.ui.Button findBtnLogin() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("btnLogin", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("btnLogin", aboutToShowThisContainer);
         }
         return cmp;
     }
