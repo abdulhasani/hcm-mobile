@@ -34,9 +34,17 @@ public class ConstanConnection {
         Dialog dlg = prog.showInifiniteBlocking();
         connectionRequest.setDisposeOnCompletion(dlg);
         NetworkManager.getInstance().addToQueue(connectionRequest);
+        
     }
     
-    public static void GET(ConnectionRequest connectionRequest){
+    public static void GET(ConnectionRequest connectionRequest,String username,String token){
+         connectionRequest.setPost(false);
+        connectionRequest.addArgument("username", username);
+        connectionRequest.addArgument("auth_token", token);
+        InfiniteProgress prog = new InfiniteProgress();
+        Dialog dlg = prog.showInifiniteBlocking();
+        connectionRequest.setDisposeOnCompletion(dlg);
+        NetworkManager.getInstance().addToQueue(connectionRequest);
     }
     
     public static void PUT(ConnectionRequest connectionRequest){
