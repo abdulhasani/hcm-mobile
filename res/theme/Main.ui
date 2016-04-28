@@ -7,9 +7,9 @@
       <layoutConstraint value="North" />
       <component type="EmbeddedContainer" name="EmbeddedContainer" cloudDestinationProperty="EmbeddedContainer" >
       </component>
-      <component type="TextField" name="txtPassword" cloudBoundProperty="text" cloudDestinationProperty="txtPassword" focusable="false" tactileTouch="false" text="" growByContent="false" constraint="65536" maxSize="10" hint="Password" >
-      </component>
       <component type="TextField" name="txtUsername" cloudBoundProperty="text" cloudDestinationProperty="txtUsername" text="" hint="Username" >
+      </component>
+      <component type="TextField" name="txtPassword" cloudBoundProperty="text" cloudDestinationProperty="txtPassword" focusable="false" tactileTouch="false" text="" growByContent="false" constraint="65536" maxSize="10" hint="Password" >
       </component>
       <component type="Button" name="btnLogin" cloudDestinationProperty="btnLogin" text="Login" >
       </component>

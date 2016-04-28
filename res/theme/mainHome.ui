@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component type="Form" name="mainHome" cloudDestinationProperty="Home" title="Home" >
+<component type="Form" name="mainHome" cloudDestinationProperty="Home" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Home" >
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
+    <layoutConstraint value="North" />
+    <component type="Container" name="Container" cloudDestinationProperty="Container" layout="GridLayout" gridLayoutRows="5" gridLayoutColumns="1" >
+      <layoutConstraint value="Center" />
+      <component type="Label" name="lblName" cloudDestinationProperty="lblName" text="Value Name" >
+      </component>
+      <component type="Label" name="lblEmpNum" cloudDestinationProperty="lblEmpNum" text="Value Employee Number" >
+      </component>
+      <component type="Label" name="lblPosition" cloudDestinationProperty="lblPosition" text="Value Position" >
+      </component>
+      <component type="Label" name="lblUnit" cloudDestinationProperty="lblUnit" text="Value Unit" >
+      </component>
+      <component type="Label" name="lblAge" cloudDestinationProperty="lblAge" text="Value Age" >
+      </component>
+    </component>
+    <component type="Container" name="Container2" cloudDestinationProperty="Container2" layout="GridLayout" gridLayoutRows="5" gridLayoutColumns="1" >
+      <layoutConstraint value="West" />
+      <component type="Label" name="Name" cloudDestinationProperty="Name" text="Name" >
+      </component>
+      <component type="Label" name="EmpNum" cloudDestinationProperty="EmpNum" text="Employee Number" >
+      </component>
+      <component type="Label" name="Position" cloudDestinationProperty="Position" text="Position" >
+      </component>
+      <component type="Label" name="Unit" cloudDestinationProperty="Unit" text="Unit" >
+      </component>
+      <component type="Label" name="Age" cloudDestinationProperty="Age" text="Age" >
+      </component>
+    </component>
+  </component>
 <command name="My Subordinate" id="3" action="mainSubordinates" backCommand="false" /><command name="My Documents" id="2" action="mainDocuments" backCommand="false" /><command name="Home" id="1" action="" backCommand="false" /></component>

@@ -422,8 +422,7 @@
         <val key="Form.transparency" value="255" />
         <val key="ImageViewer.margin" value="0,0,0,0" />
         <val key="ImageViewer.padding" value="0,0,0,0" />
-        <val key="Label.fgColor" value="f20033" />
-        <font key="Label.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <font key="Label.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="1" actualSize="3.0" />
         <border key="Label.press#border" type="empty" />
         <val key="Label.press#fgColor" value="ffffff" />
         <font key="Label.press#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
@@ -804,6 +803,8 @@
         <font key="font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
         <val key="labelLoginMessage.fgColor" value="f80000" />
         <font key="labelLoginMessage.font" type="ttf" face="0" style="0" size="8" name="native:ItalicLight" family="native:ItalicLight" sizeSettings="0" actualSize="2.0" />
+        <val key="labelprofile.align" value="1" />
+        <val key="labelprofile.padding" value="0,0,0,0" />
         <border key="press#border" type="empty" />
         <border key="sel#border" type="empty" />
         <val key="transparency" value="0" />
