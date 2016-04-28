@@ -7,11 +7,20 @@
 
 package userclasses;
 
-import com.basajans.rest.resource.SessionResource;
+import com.basajans.rest.resource.ConstanConnection;
+import com.codename1.io.ConnectionRequest;
+import com.codename1.io.JSONParser;
+import com.codename1.processing.Result;
 import generated.StateMachineBase;
 import com.codename1.ui.*; 
 import com.codename1.ui.events.*;
 import com.codename1.ui.util.Resources;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -43,19 +52,44 @@ public class StateMachine extends StateMachineBase {
     }
 
 
-    
-    private final SessionResource sessionResource=new SessionResource();
     private final ValidasiSession validasiSession=new ValidasiSession();
+    private final Map<String,Object> session=new HashMap<>();
     
     @Override
     protected void onMain_BtnLoginAction(Component c, ActionEvent event) {
         String username=findTxtUsername().getText();
         String password=findTxtPassword().getText();
         if(validasiSession.cekfield(username, password)){
-            sessionResource.submitLogin(username, password);
+            Map<String,String> mapService= new HashMap<>();
+            mapService.put("username", username);
+            mapService.put("password", password);
+            final String payload = Result.fromContent(mapService).toString();
+            ConnectionRequest connectionRequest=new ConnectionRequest("http://cloud.abyor.com:13088/hcm/api/login"){
+                 @Override
+                    protected void buildRequestBody(OutputStream os) throws IOException {
+                            os.write(payload.getBytes("UTF-8"));
+                    }
+
+                @Override
+                protected void readResponse(InputStream input) throws IOException {
+                    JSONParser jsonParse= new JSONParser();
+                    Map<String, Object> mapRespone=jsonParse.parseJSON(new InputStreamReader(input));
+                    Map<String,Object> mapData=(Map<String,Object>) mapRespone.get("data");
+                        if(mapData!=null){
+                            session.clear();
+                            session.put("username", mapData.get("username"));
+                            session.put("auth_token", mapData.get("auth_token")); 
+                            showForm("mainHome", event.getCommand());
+                        }
+                
+                    }   
+            };
+            ConstanConnection.postJSON(connectionRequest);
         }else{
             findLblMessageLogin().setText("* please input username and password");
             findLblMessageLogin().setVisible(true);
         }
     }
+
+    
 }

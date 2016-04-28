@@ -5,14 +5,24 @@
  */
 package com.basajans.wrapper;
 
+import java.util.Map;
+
+
+
 /**
  *
  * @author Hasani
  */
 public class SessionWrapper {
+    
     private final String resource="session";
     private String username;
     private String authToken;
+
+    public SessionWrapper() {
+    }
+    
+    
 
     public SessionWrapper(String username, String authToken) {
         this.username = username;
@@ -33,6 +43,7 @@ public class SessionWrapper {
         this.username = username;
     }
 
+
     public String getAuthToken() {
         return authToken;
     }
@@ -40,7 +51,14 @@ public class SessionWrapper {
     public void setAuthToken(String authToken) {
         this.authToken = authToken;
     }
+   
     
-    
+     public static SessionWrapper konversiMapToSessionWrapper(Map<String,Object> mapData){
+        if(mapData!=null){
+            return new SessionWrapper(mapData.get("username").toString(), mapData.get("auth_token").toString());
+        }else{
+            return null;
+        }
+    }
     
 }

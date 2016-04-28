@@ -16,11 +16,20 @@ import com.codename1.ui.Dialog;
  */
 public class ConstanConnection {
  
-    public static void POST(ConnectionRequest connectionRequest){
+    public static void postJSON(ConnectionRequest connectionRequest){
         connectionRequest.setContentType("application/json");
         connectionRequest.setPost(true);
         connectionRequest.setHttpMethod("POST");
         connectionRequest.addRequestHeader("Accept", "application/json");
+        InfiniteProgress prog = new InfiniteProgress();
+        Dialog dlg = prog.showInifiniteBlocking();
+        connectionRequest.setDisposeOnCompletion(dlg);
+        NetworkManager.getInstance().addToQueue(connectionRequest);
+        
+    }
+    public static void post(ConnectionRequest connectionRequest){
+        connectionRequest.setPost(true);
+        connectionRequest.setHttpMethod("POST");
         InfiniteProgress prog = new InfiniteProgress();
         Dialog dlg = prog.showInifiniteBlocking();
         connectionRequest.setDisposeOnCompletion(dlg);
