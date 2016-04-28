@@ -8,8 +8,11 @@
 package userclasses;
 
 import com.basajans.rest.resource.ConstanConnection;
+import com.basajans.wrapper.EmployeeWrapper;
+import com.codename1.components.InfiniteProgress;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
+import com.codename1.io.NetworkManager;
 import com.codename1.processing.Result;
 import generated.StateMachineBase;
 import com.codename1.ui.*; 
@@ -64,6 +67,7 @@ public class StateMachine extends StateMachineBase {
             mapService.put("username", username);
             mapService.put("password", password);
             final String payload = Result.fromContent(mapService).toString();
+            //http://cloud.abyor.com:13088/hcm/api/login
             ConnectionRequest connectionRequest=new ConnectionRequest("http://cloud.abyor.com:13088/hcm/api/login"){
                  @Override
                     protected void buildRequestBody(OutputStream os) throws IOException {
@@ -79,7 +83,7 @@ public class StateMachine extends StateMachineBase {
                             session.clear();
                             session.put("username", mapData.get("username"));
                             session.put("auth_token", mapData.get("auth_token")); 
-                            showForm("mainHome", event.getCommand());
+                            loadProfile();
                         }
                 
                     }   
@@ -90,6 +94,57 @@ public class StateMachine extends StateMachineBase {
             findLblMessageLogin().setVisible(true);
         }
     }
+
+    @Override
+    protected void beforeMainHome(Form f) {
+        EmployeeWrapper employeeWrapper=(EmployeeWrapper) session.get("employeeWrapper");
+        findLblName().setText(employeeWrapper.getFullName());
+        findLblAge().setText(employeeWrapper.getAge().toString());
+        findLblUnit().setText(employeeWrapper.getUnit());
+        findLblEmpNum().setText(employeeWrapper.getEmployeeNumber());
+        findLblPosition().setText(employeeWrapper.getPosition());
+    }
+
+    
+    
+
+
+    
+    private void loadProfile() {
+         //http://cloud.abyor.com:13088/hcm/api/user/profile
+        ConnectionRequest connectionRequest=new ConnectionRequest("http://cloud.abyor.com:13088/hcm/api/user/profile"){
+
+            @Override
+            protected void postResponse() {
+            }
+            
+            @Override
+            protected void readResponse(InputStream input) throws IOException {
+                JSONParser jsonParse= new JSONParser();
+                 Map<String, Object> mapRespone=jsonParse.parseJSON(new InputStreamReader(input));
+                 Map<String,Object> mapData=(Map<String,Object>) mapRespone.get("data");
+                 EmployeeWrapper employeeWrapper=new EmployeeWrapper();
+                 employeeWrapper.setId(mapData.get("id").toString());
+                 employeeWrapper.setFullName(mapData.get("full_name").toString()); 
+                 String age=mapData.get("age").toString();
+                 if(age.length()>0){   
+                    employeeWrapper.setAge(Byte.parseByte(age.substring(0, age.length()-2)));
+                 }
+                 employeeWrapper.setEmployeeNumber(mapData.get("employee_number").toString());
+                 employeeWrapper.setPosition(mapData.get("position").toString());
+                 employeeWrapper.setUnit(mapData.get("unit").toString());
+                 employeeWrapper.setSubareCode(Integer.parseInt(mapData.get("subarea_code").toString()));
+                 session.put("employeeWrapper", employeeWrapper);
+                 showForm("mainHome", null);
+            }
+        
+        };
+        ConstanConnection.GET(connectionRequest, session.get("username").toString(), session.get("auth_token").toString());
+    }
+
+   
+    
+    
 
     
 }
