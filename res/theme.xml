@@ -804,7 +804,7 @@
         <val key="labelLoginMessage.fgColor" value="f80000" />
         <font key="labelLoginMessage.font" type="ttf" face="0" style="0" size="8" name="native:ItalicLight" family="native:ItalicLight" sizeSettings="0" actualSize="2.0" />
         <val key="labelprofile.align" value="1" />
-        <font key="labelprofile.font" type="ttf" face="0" style="0" size="8" name="native:MainBold" family="native:MainBold" sizeSettings="0" actualSize="5.0" />
+        <font key="labelprofile.font" type="system" face="0" style="1" size="8" />
         <border key="press#border" type="empty" />
         <border key="sel#border" type="empty" />
         <val key="transparency" value="0" />

@@ -7,7 +7,7 @@
       <layoutConstraint value="Center" />
       <component type="Label" name="lblName" cloudDestinationProperty="lblName" uiid="labelprofile" text="Value Name" >
       </component>
-      <component type="Label" name="lblEmpNum" cloudDestinationProperty="lblEmpNum" uiid="labelprofile" text="Value Employee Number" >
+      <component type="Label" name="lblEmpNum" cloudDestinationProperty="lblEmpNum" uiid="labelprofile" focusable="false" text="Value Employee Number" gap="2" >
       </component>
       <component type="Label" name="lblPosition" cloudDestinationProperty="lblPosition" uiid="labelprofile" text="Value Position" >
       </component>
