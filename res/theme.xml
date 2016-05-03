@@ -216,17 +216,11 @@
         <val key="CalendarTitleArea.fgColor" value="ffffff" />
         <val key="CalendarTitleArea.margin" value="0,0,0,0" />
         <val key="CalendarTitleArea.transparency" value="255" />
-        <val key="CheckBox.align" value="4" />
+        <val key="CheckBox.align" value="1" />
         <gradient key="CheckBox.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
         <val key="CheckBox.bgType" value="0" />
-        <border key="CheckBox.border" type="image" i1="OKGR.borderTop_1.png" i2="OKGR.borderBottom_1.png" i3="OKGR.borderLeft_1.png" i4="OKGR.borderRight_1.png" i5="OKGR.borderTopL_1.png" i6="OKGR.borderTopR_1.png" i7="OKGR.borderBottomL_1.png" i8="OKGR.borderBottomR_1.png" i9="OKGR.borderCenter_1.png" />
         <val key="CheckBox.derive" value="Button" />
-        <val key="CheckBox.fgColor" value="ffffff" />
-        <font key="CheckBox.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
-        <val key="CheckBox.marUnit" value="2,2,2,2" />
-        <val key="CheckBox.margin" value="1,1,1,1" />
-        <val key="CheckBox.padUnit" value="2,2,2,2" />
-        <val key="CheckBox.padding" value="1,1,1,1" />
+        <font key="CheckBox.font" type="system" face="0" style="1" size="8" />
         <val key="CheckBox.press#align" value="4" />
         <gradient key="CheckBox.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
         <val key="CheckBox.press#bgType" value="0" />
@@ -239,19 +233,9 @@
         <val key="CheckBox.press#padUnit" value="2,2,2,2" />
         <val key="CheckBox.press#padding" value="1,1,1,1" />
         <val key="CheckBox.press#transparency" value="0" />
-        <val key="CheckBox.sel#align" value="4" />
-        <gradient key="CheckBox.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
-        <val key="CheckBox.sel#bgType" value="0" />
-        <border key="CheckBox.sel#border" type="image" i1="OKGR.borderTop_1.png" i2="OKGR.borderBottom_1.png" i3="OKGR.borderLeft_1.png" i4="OKGR.borderRight_1.png" i5="OKGR.borderTopL_1.png" i6="OKGR.borderTopR_1.png" i7="OKGR.borderBottomL_1.png" i8="OKGR.borderBottomR_1.png" i9="OKGR.borderCenter_1.png" />
-        <val key="CheckBox.sel#derive" value="Button" />
-        <val key="CheckBox.sel#fgColor" value="ffffff" />
-        <font key="CheckBox.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
-        <val key="CheckBox.sel#marUnit" value="2,2,2,2" />
-        <val key="CheckBox.sel#margin" value="1,1,1,1" />
-        <val key="CheckBox.sel#padUnit" value="2,2,2,2" />
-        <val key="CheckBox.sel#padding" value="1,1,1,1" />
-        <val key="CheckBox.sel#transparency" value="0" />
-        <val key="CheckBox.transparency" value="0" />
+        <val key="CheckBox.sel#align" value="1" />
+        <val key="CheckBox.sel#derive" value="CheckBox" />
+        <font key="CheckBox.sel#font" type="system" face="0" style="1" size="8" />
         <border key="ComboBox.border" type="image" i1="ComboBox.borderTop_1.png" i2="ComboBox.borderBottom_1.png" i3="ComboBox.borderLeft_1.png" i4="ComboBox.borderRight_1.png" i5="ComboBox.borderTopL_1.png" i6="ComboBox.borderTopR_1.png" i7="ComboBox.borderBottomL_1.png" i8="ComboBox.borderBottomR_1.png" i9="ComboBox.borderCenter_1.png" />
         <font key="ComboBox.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
         <val key="ComboBox.marUnit" value="2,2,2,2" />
@@ -419,6 +403,8 @@
         <val key="Form.bgColor" value="ffffff" />
         <gradient key="Form.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
         <val key="Form.bgType" value="0" />
+        <val key="Form.sel#align" value="1" />
+        <font key="Form.sel#font" type="system" face="0" style="1" size="8" />
         <val key="Form.transparency" value="255" />
         <val key="ImageViewer.margin" value="0,0,0,0" />
         <val key="ImageViewer.padding" value="0,0,0,0" />
