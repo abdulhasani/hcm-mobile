@@ -14,13 +14,13 @@
   <component type="Container" name="ContainerTahun" cloudDestinationProperty="ContainerTahun" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
     <component type="Container" name="Container" cloudDestinationProperty="Container" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="4" >
       <layoutConstraint value="North" />
-      <component type="CheckBox" name="Tahun1" cloudDestinationProperty="Tahun1" text="Tahun1" >
+      <component type="RadioButton" name="RB1" cloudDestinationProperty="RB1" text="RB1" >
       </component>
-      <component type="CheckBox" name="Tahun2" cloudDestinationProperty="Tahun2" text="Tahun2" >
+      <component type="RadioButton" name="RB2" cloudDestinationProperty="RB2" text="RB2" >
       </component>
-      <component type="CheckBox" name="Tahun3" cloudDestinationProperty="Tahun3" text="Tahun3" >
+      <component type="RadioButton" name="RB3" cloudDestinationProperty="RB3" text="RB3" >
       </component>
-      <component type="CheckBox" name="Tahun4" cloudDestinationProperty="CheckBox" text="Tahun4" >
+      <component type="RadioButton" name="RB4" cloudDestinationProperty="RB4" text="RB4" >
       </component>
     </component>
   </component>
