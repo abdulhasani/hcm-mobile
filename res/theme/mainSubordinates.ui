@@ -24,6 +24,22 @@
       </component>
     </component>
   </component>
+  <component type="Container" name="Container2" cloudDestinationProperty="Container2" >
+    <component type="MultiList" name="MultiList" cloudDestinationProperty="MultiList" >
+      <mapItems>
+        <stringItem key="Line2" value="more..." />
+        <stringItem key="Line1" value="Entry 1" />
+      </mapItems>
+      <mapItems>
+        <stringItem key="Line2" value="more..." />
+        <stringItem key="Line1" value="Entry 2" />
+      </mapItems>
+      <mapItems>
+        <stringItem key="Line2" value="more..." />
+        <stringItem key="Line1" value="Entry 3" />
+      </mapItems>
+    </component>
+  </component>
   <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
     <component type="List" name="List" cloudDestinationProperty="List" >
       <layoutConstraint value="Center" />
