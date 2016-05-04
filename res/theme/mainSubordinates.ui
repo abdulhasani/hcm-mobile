@@ -27,9 +27,6 @@
   <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
     <component type="List" name="List" cloudDestinationProperty="List" >
       <layoutConstraint value="Center" />
-      <stringItem value="Item 1" />
-      <stringItem value="Item 2" />
-      <stringItem value="Item 3" />
     </component>
   </component>
 <command name="Home" id="1" action="mainHome" backCommand="true" /><command name="My Documents" id="2" action="mainDocuments" backCommand="false" /><command name="My Subordinates" id="3" action="" backCommand="false" /></component>

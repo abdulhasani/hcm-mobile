@@ -8,11 +8,12 @@
 package userclasses;
 
 import com.basajans.rest.resource.ConstanConnection;
+import com.basajans.wrapper.EmployeeComp;
 import com.basajans.wrapper.EmployeeWrapper;
-import com.codename1.components.InfiniteProgress;
+import com.basajans.wrapper.IndividualPerformancePlanTransfer;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
-import com.codename1.io.NetworkManager;
+import com.codename1.l10n.SimpleDateFormat;
 import com.codename1.processing.Result;
 import generated.StateMachineBase;
 import com.codename1.ui.*; 
@@ -22,8 +23,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeSet;
 
 /**
  *
@@ -38,6 +42,7 @@ public class StateMachine extends StateMachineBase {
     public StateMachine(String resFile) {
         super(resFile);
         findLblMessageLogin().setVisible(false);
+        
         // do not modify, write code in initVars and initialize class members there,
         // the constructor might be invoked too late due to race conditions that might occur
         
@@ -105,10 +110,91 @@ public class StateMachine extends StateMachineBase {
         findLblPosition().setText(employeeWrapper.getPosition());
     }
 
+    @Override
+    protected void beforeMainSubordinates(Form f) {
+        ButtonGroup buttonGroup=new ButtonGroup(findRB1(),findRB2(),findRB3(),findRB4());
+        findRB1().setSelected(true);
+        SimpleDateFormat formatSimple=new SimpleDateFormat("yyyy");
+        String year=formatSimple.format(new Date());
+        Integer yearNow=Integer.parseInt(year);
+        Integer yearNext=yearNow+1;
+        Integer yearYester=yearNow-1;
+        Integer yearLast=yearNow-2;
+        findRB1().setText(yearNext.toString());
+        findRB2().setText(year);
+        findRB3().setText(yearYester.toString());
+        findRB4().setText(yearLast.toString());
+        
+    }
     
+        
+    private final Map<String,Object> IPP=new HashMap<>();
+    private final Map<String,Object> CAP=new HashMap<>();
+    private final Map<String,Object> IPT=new HashMap<>();
+    private final Map<String,Object> IPR=new HashMap<>();
+    private final TreeSet<EmployeeWrapper> toPartyReportStructure=new TreeSet<>(new EmployeeComp());
+    private final TreeSet<EmployeeWrapper> toPartyOrgStructure=new TreeSet<>(new EmployeeComp());
     
+    @Override
+    protected void postMainSubordinates(Form f) {
+        IPP.clear();
+        CAP.clear();
+        IPT.clear();
+        IPR.clear();
+        toPartyReportStructure.clear();
+        
+        ConnectionRequest connectionRequest;
+        connectionRequest = new ConnectionRequest("http://cloud.abyor.com:13088/hcm/api/pms/subordinates"){
+            @Override
+            protected void postResponse() {
+            
+            }
 
+            @Override
+            protected void readResponse(InputStream input) throws IOException {
+                JSONParser jsonParse= new JSONParser();
+                Map<String, Object> mapRespone=jsonParse.parseJSON(new InputStreamReader(input));
+                //Map pertama saat dikirim
+                Map<String,Object> mapData=(Map<String,Object>) mapRespone.get("data");
+                //mapdata ada data untuk subordiate pada sebuah array list
+                ArrayList<Object> items=(ArrayList<Object>) mapData.get("items");
+                for (Object object : items) {
+                    Map<String,Object> mapItem=(Map<String,Object>) object;
+                    if(mapItem.get("structure_type").toString().equals("REPORTING_STRUCTURE")){
+                        toPartyReportStructure.add(konversiEmployeeWrapper(mapItem));
+                        ArrayList<Object> individualPerformancePlans=(ArrayList<Object>) mapItem.get("individual_performance_plans");
+                        IndividualPerformancePlanTransfer individualPerformancePlanTransfer;
+                        for (Object individualPPS : individualPerformancePlans) {
+                            Map<String,Object> mapindividualPPS=(Map<String,Object>) individualPPS;
+                            String number=(mapindividualPPS.get("number")!=null)?mapindividualPPS.get("number").toString():null;
+                            individualPerformancePlanTransfer=new IndividualPerformancePlanTransfer();
+                            
+                        }
+                    }else{
+                        
+                    }
+                }
+                for (EmployeeWrapper object : toPartyReportStructure) {
+                    System.out.println(object.getFullName());
+                }
+ 
+            }
+        };
+        ConstanConnection.GET(connectionRequest, session.get("username").toString(), session.get("auth_token").toString());
+    }
+    
+    private EmployeeWrapper konversiEmployeeWrapper(Map<String,Object> mapItem){
+        EmployeeWrapper employeeWrapper;
+        employeeWrapper=new EmployeeWrapper();
+        employeeWrapper.setId(mapItem.get("id").toString());
+        employeeWrapper.setFullName(mapItem.get("full_name").toString());
+        employeeWrapper.setPosition(mapItem.get("position").toString());
+        employeeWrapper.setStructureType(mapItem.get("structure_type").toString());
+        employeeWrapper.setUnit(mapItem.get("unit").toString());
+        return employeeWrapper;
+    }
 
+    
     
     private void loadProfile() {
          //http://cloud.abyor.com:13088/hcm/api/user/profile
@@ -120,7 +206,7 @@ public class StateMachine extends StateMachineBase {
             
             @Override
             protected void readResponse(InputStream input) throws IOException {
-                JSONParser jsonParse= new JSONParser();
+                 JSONParser jsonParse= new JSONParser();
                  Map<String, Object> mapRespone=jsonParse.parseJSON(new InputStreamReader(input));
                  Map<String,Object> mapData=(Map<String,Object>) mapRespone.get("data");
                  EmployeeWrapper employeeWrapper=new EmployeeWrapper();
@@ -134,6 +220,7 @@ public class StateMachine extends StateMachineBase {
                  employeeWrapper.setPosition(mapData.get("position").toString());
                  employeeWrapper.setUnit(mapData.get("unit").toString());
                  employeeWrapper.setSubareCode(Integer.parseInt(mapData.get("subarea_code").toString()));
+                 
                  session.put("employeeWrapper", employeeWrapper);
                  showForm("mainHome", null);
             }
@@ -147,4 +234,24 @@ public class StateMachine extends StateMachineBase {
     
 
     
+
+    @Override
+    protected void onMainSubordinates_RB2Action(Component c, ActionEvent event) {
+        int index=findList().getModel().getSize();
+        for(int i=index-1;i>=0;--i){
+            findList().getModel().removeItem(i);
+        }
+        
+        for (EmployeeWrapper employeeWrapper : toPartyReportStructure) {
+            findList().addItem(employeeWrapper.getFullName());
+        }
+    }
+
+    @Override
+    protected void onMainSubordinates_RB3Action(Component c, ActionEvent event) {
+        int index=findList().getModel().getSize();
+        for(int i=index-1;i>=0;--i){
+            findList().getModel().removeItem(i);
+        }
+    }
 }

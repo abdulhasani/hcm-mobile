@@ -544,7 +544,7 @@
         <val key="RadioButton.bgType" value="0" />
         <border key="RadioButton.border" type="image" i1="OKGR.borderTop_1.png" i2="OKGR.borderBottom_1.png" i3="OKGR.borderLeft_1.png" i4="OKGR.borderRight_1.png" i5="OKGR.borderTopL_1.png" i6="OKGR.borderTopR_1.png" i7="OKGR.borderBottomL_1.png" i8="OKGR.borderBottomR_1.png" i9="OKGR.borderCenter_1.png" />
         <val key="RadioButton.fgColor" value="ffffff" />
-        <font key="RadioButton.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="3" actualSize="3.0" />
+        <font key="RadioButton.font" type="ttf" face="0" style="0" size="8" name="native:MainRegular" family="native:MainRegular" sizeSettings="0" actualSize="3.0" />
         <val key="RadioButton.marUnit" value="2,2,2,2" />
         <val key="RadioButton.margin" value="1,1,1,1" />
         <val key="RadioButton.padUnit" value="2,2,2,2" />

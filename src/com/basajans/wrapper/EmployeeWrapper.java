@@ -18,6 +18,10 @@ public class EmployeeWrapper {
     private String position;
     private String unit;
     private Integer subareCode;
+    private String allowancePosition;
+    private String toeicScore;
+    private String phone;
+    private String structureType;
 
     public String getId() {
         return id;
@@ -75,6 +79,38 @@ public class EmployeeWrapper {
 
     public void setSubareCode(Integer subareCode) {
         this.subareCode = subareCode;
+    }
+
+    public String getAllowancePosition() {
+        return allowancePosition;
+    }
+
+    public void setAllowancePosition(String allowancePosition) {
+        this.allowancePosition = allowancePosition;
+    }
+
+    public String getToeicScore() {
+        return toeicScore;
+    }
+
+    public void setToeicScore(String toeicScore) {
+        this.toeicScore = toeicScore;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getStructureType() {
+        return structureType;
+    }
+
+    public void setStructureType(String structureType) {
+        this.structureType = structureType;
     }
 
    

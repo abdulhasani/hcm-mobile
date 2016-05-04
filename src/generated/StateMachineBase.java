@@ -37,8 +37,11 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("EmbeddedContainer", com.codename1.ui.util.EmbeddedContainer.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
+        UIBuilder.registerCustomComponent("ComboBox", com.codename1.ui.ComboBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("TextField", com.codename1.ui.TextField.class);
+        UIBuilder.registerCustomComponent("List", com.codename1.ui.List.class);
+        UIBuilder.registerCustomComponent("RadioButton", com.codename1.ui.RadioButton.class);
         if(loadTheme) {
             if(res == null) {
                 try {
@@ -77,8 +80,11 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("EmbeddedContainer", com.codename1.ui.util.EmbeddedContainer.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
+        UIBuilder.registerCustomComponent("ComboBox", com.codename1.ui.ComboBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("TextField", com.codename1.ui.TextField.class);
+        UIBuilder.registerCustomComponent("List", com.codename1.ui.List.class);
+        UIBuilder.registerCustomComponent("RadioButton", com.codename1.ui.RadioButton.class);
         if(loadTheme) {
             if(res == null) {
                 try {
@@ -116,6 +122,42 @@ public abstract class StateMachineBase extends UIBuilder {
         this(res, null, loadTheme);
     }
 
+    public com.codename1.ui.RadioButton findRB1(Component root) {
+        return (com.codename1.ui.RadioButton)findByName("RB1", root);
+    }
+
+    public com.codename1.ui.RadioButton findRB1() {
+        com.codename1.ui.RadioButton cmp = (com.codename1.ui.RadioButton)findByName("RB1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.RadioButton)findByName("RB1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.RadioButton findRB3(Component root) {
+        return (com.codename1.ui.RadioButton)findByName("RB3", root);
+    }
+
+    public com.codename1.ui.RadioButton findRB3() {
+        com.codename1.ui.RadioButton cmp = (com.codename1.ui.RadioButton)findByName("RB3", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.RadioButton)findByName("RB3", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.RadioButton findRB2(Component root) {
+        return (com.codename1.ui.RadioButton)findByName("RB2", root);
+    }
+
+    public com.codename1.ui.RadioButton findRB2() {
+        com.codename1.ui.RadioButton cmp = (com.codename1.ui.RadioButton)findByName("RB2", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.RadioButton)findByName("RB2", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Container findLapisKe3(Component root) {
         return (com.codename1.ui.Container)findByName("lapisKe3", root);
     }
@@ -136,6 +178,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("lapisKe2", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("lapisKe2", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.RadioButton findRB4(Component root) {
+        return (com.codename1.ui.RadioButton)findByName("RB4", root);
+    }
+
+    public com.codename1.ui.RadioButton findRB4() {
+        com.codename1.ui.RadioButton cmp = (com.codename1.ui.RadioButton)findByName("RB4", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.RadioButton)findByName("RB4", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -248,6 +302,30 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.Container findContainerCombo(Component root) {
+        return (com.codename1.ui.Container)findByName("ContainerCombo", root);
+    }
+
+    public com.codename1.ui.Container findContainerCombo() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("ContainerCombo", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("ContainerCombo", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.List findList(Component root) {
+        return (com.codename1.ui.List)findByName("List", root);
+    }
+
+    public com.codename1.ui.List findList() {
+        com.codename1.ui.List cmp = (com.codename1.ui.List)findByName("List", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.List)findByName("List", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Label findLblPosition(Component root) {
         return (com.codename1.ui.Label)findByName("lblPosition", root);
     }
@@ -308,6 +386,18 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.ComboBox findComboBoxDokumen(Component root) {
+        return (com.codename1.ui.ComboBox)findByName("ComboBoxDokumen", root);
+    }
+
+    public com.codename1.ui.ComboBox findComboBoxDokumen() {
+        com.codename1.ui.ComboBox cmp = (com.codename1.ui.ComboBox)findByName("ComboBoxDokumen", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.ComboBox)findByName("ComboBoxDokumen", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Label findPosition(Component root) {
         return (com.codename1.ui.Label)findByName("Position", root);
     }
@@ -340,6 +430,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Label)findByName("lblMessageLogin", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainerTahun(Component root) {
+        return (com.codename1.ui.Container)findByName("ContainerTahun", root);
+    }
+
+    public com.codename1.ui.Container findContainerTahun() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("ContainerTahun", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("ContainerTahun", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -769,6 +871,25 @@ public abstract class StateMachineBase extends UIBuilder {
     protected void setStateMain(Form f, Hashtable state) {
     }
 
+    protected boolean setListModel(List cmp) {
+        String listName = cmp.getName();
+        if("List".equals(listName)) {
+            return initListModelList(cmp);
+        }
+        if("ComboBoxDokumen".equals(listName)) {
+            return initListModelComboBoxDokumen(cmp);
+        }
+        return super.setListModel(cmp);
+    }
+
+    protected boolean initListModelList(List cmp) {
+        return false;
+    }
+
+    protected boolean initListModelComboBoxDokumen(List cmp) {
+        return false;
+    }
+
     protected void handleComponentAction(Component c, ActionEvent event) {
         Container rootContainerAncestor = getRootAncestor(c);
         if(rootContainerAncestor == null) return;
@@ -778,6 +899,32 @@ public abstract class StateMachineBase extends UIBuilder {
             c = c.getParent().getLeadParent();
         }
         if(rootContainerName == null) return;
+        if(rootContainerName.equals("mainSubordinates")) {
+            if("ComboBoxDokumen".equals(c.getName())) {
+                onMainSubordinates_ComboBoxDokumenAction(c, event);
+                return;
+            }
+            if("RB1".equals(c.getName())) {
+                onMainSubordinates_RB1Action(c, event);
+                return;
+            }
+            if("RB2".equals(c.getName())) {
+                onMainSubordinates_RB2Action(c, event);
+                return;
+            }
+            if("RB3".equals(c.getName())) {
+                onMainSubordinates_RB3Action(c, event);
+                return;
+            }
+            if("RB4".equals(c.getName())) {
+                onMainSubordinates_RB4Action(c, event);
+                return;
+            }
+            if("List".equals(c.getName())) {
+                onMainSubordinates_ListAction(c, event);
+                return;
+            }
+        }
         if(rootContainerName.equals("Main")) {
             if("txtUsername".equals(c.getName())) {
                 onMain_TxtUsernameAction(c, event);
@@ -797,6 +944,24 @@ public abstract class StateMachineBase extends UIBuilder {
             }
         }
     }
+
+      protected void onMainSubordinates_ComboBoxDokumenAction(Component c, ActionEvent event) {
+      }
+
+      protected void onMainSubordinates_RB1Action(Component c, ActionEvent event) {
+      }
+
+      protected void onMainSubordinates_RB2Action(Component c, ActionEvent event) {
+      }
+
+      protected void onMainSubordinates_RB3Action(Component c, ActionEvent event) {
+      }
+
+      protected void onMainSubordinates_RB4Action(Component c, ActionEvent event) {
+      }
+
+      protected void onMainSubordinates_ListAction(Component c, ActionEvent event) {
+      }
 
       protected void onMain_TxtUsernameAction(Component c, ActionEvent event) {
       }
